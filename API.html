@@ -16,7 +16,7 @@
 
     <form onsubmit="getCountryInfo(event)">
         <label for="country">Digite o nome de um país:</label>
-        <input type="text" id="country" required>
+        <input type="text" id="country" >
         <button type="submit">Buscar</button>
     </form>
     
@@ -26,7 +26,7 @@
     
 <script>
     async function getCountryInfo(event) {
-        event.preventDefault(); // Evita que a página recarregue
+        event.preventDefault();
 
         const countryInput = document.getElementById('country').value.trim();
         const resultadoDiv = document.getElementById('resultado');
@@ -46,7 +46,7 @@
             const data = await response.json();
             const country = data[0];
 
-            // Cria HTML para exibir os dados
+            
             const html = `
                 <h2>${country.name.official}</h2>
                 <p><strong>Capital:</strong> ${country.capital ? country.capital[0] : 'Não disponível'}</p>

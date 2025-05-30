@@ -1,18 +1,17 @@
 body{
     margin: 0;
-    font-size: 16px;
+    font-size: 24px;
     background-color: rgb(255, 255, 255);
 }
 div{
     text-align: center;
-    
+    background-color: rgb(192, 192, 192);
     width: 45%;
     align-items: center;
-    margin-left: 25rem;
+    margin-left: 32rem;
     margin-top: 5rem;
-    height: 2rem;
+    height: 25rem;
     border-radius: 20%;
-    padding: 2rem;
 }
 form{
     margin-top: 1rem;
@@ -25,7 +24,7 @@ ul{
     text-align: center;
     list-style-type: none;
     display: inline-block;
-    margin-left: 9rem;
+    margin-left: 22rem;
 }
 li{
     display: inline-block;
@@ -40,4 +39,11 @@ li{
 a{
     text-decoration: none;
     color: black;
+}
+input{
+    width: 300px;
+}
+button{
+    width: 150px;
+    background-color: aqua;
 }
