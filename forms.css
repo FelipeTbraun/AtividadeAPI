@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+}
+div{
+    text-align: center;
+    background-color: rgb(236, 234, 234);
+    width: 45%;
+    align-items: center;
+    margin-left: 25rem;
+    margin-top: 5rem;
+    height: 20rem;
+    border-radius: 20%;
+}
+form{
+    margin-top: 1rem;
+}
+nav{
+    background-color: rgb(139, 138, 138);
+    top: 0;
+}
+ul{
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 9rem;
+}
+li{
+    display: inline-block;
+    padding-left: 1rem;
+    margin-left: 15rem;
+    background-color: rgb(209, 205, 205);
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 30%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

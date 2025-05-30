@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="API.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Forms.html">Calcular Salario</a></li>
+            <li><a href="API.html">API</a></li>
+        </ul>
+    </nav>
+
+    <form onsubmit="getCountryInfo(event)">
+        <label for="country">Digite o nome de um país:</label>
+        <input type="text" id="country" required>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <div id="resultado"></div>
+    
+    
+    
+<script>
+    async function getCountryInfo(event) {
+        event.preventDefault(); // Evita que a página recarregue
+
+        const countryInput = document.getElementById('country').value.trim();
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerHTML = ''; // Limpa o conteúdo anterior
+
+        if (!countryInput) {
+            resultadoDiv.innerHTML = '<p>Por favor, insira um nome de país válido.</p>';
+            return;
+        }
+
+        try {
+            const response = await fetch(`https://restcountries.com/v3.1/name/${countryInput}`);
+            if (!response.ok) {
+                throw new Error('País não encontrado');
+            }
+
+            const data = await response.json();
+            const country = data[0];
+
+            // Cria HTML para exibir os dados
+            const html = `
+                <h2>${country.name.official}</h2>
+                <p><strong>Capital:</strong> ${country.capital ? country.capital[0] : 'Não disponível'}</p>
+                <p><strong>População:</strong> ${country.population.toLocaleString()}</p>
+                <p><strong>Região:</strong> ${country.region}</p>
+                <img src="${country.flags.svg}" alt="Bandeira de ${country.name.common}" width="200">
+            `;
+            resultadoDiv.innerHTML = html;
+
+        } catch (error) {
+            resultadoDiv.innerHTML = `<p>Erro: ${error.message}</p>`;
+        }
+    }
+</script>
+
+</body>
+</html>

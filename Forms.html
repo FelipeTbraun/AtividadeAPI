@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="Forms.html">Calcular Salario</a></li>
+        <li><a href="API.html">API</a></li>
+    </ul>
+</nav>
+
+<div>
+    <form action="">
+<label for="name" id="firstLabel">Nome:</label><br>
+<input type="text" name="" id="name"><p></p>
+<label for="salario">Salário Bruto:</label><br>
+<input type="number" step="0.5" name="" id="salario"><p></p>
+<label for="idade">Idade</label><br>
+<input type="text" name="" id="idade"><p></p>
+<label for="ndep">Numero de dependentes</label><br>
+<input type="text" name="" id="ndep"><p></p>
+<button onclick="calculaSalario()">Enviar</button>
+</form>
+</div>
+<p></p>
+<script>
+    
+    
+    function calculaSalario(){
+    const nome = (document.getElementById('name').value);
+    const idade = parseFloat(document.getElementById('idade').value);
+    const salarioBruto = parseFloat(document.getElementById('salario').value);
+    const NumDependentes = parseFloat(document.getElementById('ndep').value);
+    if(idade > 50){
+       const salarioTotal = salarioBruto+300;
+        const INSS = salarioBruto * 0.08;
+        const VlTransporte = salarioBruto * 0.05;
+        const salarioLiquido = (salarioBruto - INSS - VlTransporte +(50 * NumDependentes))
+        alert("O seu nome é: " + nome);
+        alert("O seu numero de dependentes é:" + NumDependentes)
+        alert("O seu salario bruto é: "+salarioTotal);
+        alert("O valor do seu INSS é: "+ INSS);
+        alert("O valor do seu vale transporte é: " + VlTransporte)
+        alert("O seu salario Liquido é " + salarioLiquido)
+    }else{
+        const salarioTotal = salarioBruto+200;
+        const INSS = salarioBruto * 0.08;
+        const VlTransporte = salarioBruto * 0.05;
+        const salarioLiquido = (salarioBruto - INSS - VlTransporte +(50 * NumDependentes))
+        alert("O seu nome é: " + nome);
+        alert("O seu numero de dependentes é:" + NumDependentes)
+        alert("O seu salario bruto é: "+salarioTotal);
+        alert("O valor do seu INSS é: "+ INSS);
+        alert("O valor do seu vale transporte é: " + VlTransporte)
+        alert("O seu salario Liquido é " + salarioLiquido)
+    }
+}
+</script>
+</body>
+</html>
